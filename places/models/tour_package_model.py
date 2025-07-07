@@ -7,7 +7,7 @@ class TourPackage(models.Model):
     guide = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'is_staff': True})
     name = models.CharField(max_length=255)
     description = models.TextField()
-    price = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.FloatField()
     duration_days = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
