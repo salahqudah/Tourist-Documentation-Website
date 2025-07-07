@@ -1,13 +1,13 @@
-from .tourist_place_view import TouristPlaceViewSet
-from .tag_view import TagViewSet
-from .review_view import ReviewViewSet
-from .tour_package_view import TourPackageViewSet
-from .booking_view import BookingViewSet
+from .tourist_place_view import TouristPlaceListCreateView, TouristPlaceDetailView
+from .tag_view import TagListView, TagDetailView
+from .review_view import ReviewListCreateView, ReviewDetailView
+from .tour_package_view import TourPackageListCreateView, TourPackageDetailView
+from .booking_view import BookingListCreateView, BookingDetailView
 
 __all__ = [
-    "TouristPlaceViewSet",
-    "TagViewSet",
-    "ReviewViewSet",
-    "TourPackageViewSet",
-    "BookingViewSet",
+    "TouristPlaceListCreateView", "TouristPlaceDetailView",
+    "TagListView", "TagDetailView",
+    "ReviewListCreateView", "ReviewDetailView",
+    "TourPackageListCreateView", "TourPackageDetailView",
+    "BookingListCreateView", "BookingDetailView",
 ]
