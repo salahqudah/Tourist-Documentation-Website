@@ -1,0 +1,5 @@
+from .tourist_place_serializer import TouristPlaceSerializer
+from .tag_serializer import TagSerializer
+from .review_serializer import ReviewSerializer
+from .tour_package_serializer import TourPackageSerializer
+from .booking_serializer import BookingSerializer
