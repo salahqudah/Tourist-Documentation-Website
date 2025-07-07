@@ -2,14 +2,14 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from django.shortcuts import get_object_or_404
-from ..models import Booking
+from ..models import BookingStatus
 from ..serializers import BookingSerializer
 
 class BookingListCreateView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        bookings = Booking.objects.filter(user=request.user)
+        bookings = BookingStatus.objects.filter(user=request.user)
         serializer = BookingSerializer(bookings, many=True)
         return Response(serializer.data)
 
@@ -24,7 +24,7 @@ class BookingDetailView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request, pk):
-        booking = get_object_or_404(Booking, pk=pk, user=request.user)
+        booking = get_object_or_404(BookingStatus, pk=pk, user=request.user)
         serializer = BookingSerializer(booking)
         return Response(serializer.data)
 
