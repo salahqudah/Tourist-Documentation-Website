@@ -1,8 +1,16 @@
 from rest_framework import serializers
-from ..models.transaction_model import Transaction
+from ..models.booking_model import Booking
+from ..models.tour_package_model import TourPackage
+
+class TourPackageSimpleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TourPackage
+        fields = ['id', 'name', 'price']
 
 class TransactionSerializer(serializers.ModelSerializer):
+    tour_package = TourPackageSimpleSerializer()
+    user = serializers.StringRelatedField()
+
     class Meta:
-        model = Transaction
-        fields = '__all__'
-        read_only_fields = ['id', 'payment_date']  # You can add others as needed
+        model = Booking
+        fields = ['id', 'user', 'tour_package', 'booked_at']
