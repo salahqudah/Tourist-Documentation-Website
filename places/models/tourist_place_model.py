@@ -3,7 +3,7 @@ from .tag_model import Tag
 
 class TouristPlace(models.Model):
     name = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.CharField(max_length=500)
     city = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     image = models.ImageField(upload_to='places/')
