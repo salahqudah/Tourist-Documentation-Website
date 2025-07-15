@@ -1,0 +1,12 @@
+[
+  {
+    "model": "places.booking",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "tour_package": 1,
+      "status": 1,
+      "booked_at": "2025-07-15T08:00:00Z"
+    }
+  }
+]
