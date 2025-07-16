@@ -3,12 +3,22 @@
     "model": "places.tourpackage",
     "pk": 1,
     "fields": {
-      "name": "Jordan Explorer",
-      "description": "A 3-day tour through Petra, Wadi Rum, and the Dead Sea.",
-      "price": "180.00",
-      "duration_days": 3,
-      "guide": 1,
-      "created_at": "2024-01-01T00:00:00Z"
+      "name": "Petra Adventure",
+      "description": "A guided tour through the ancient city of Petra, including hiking trails and archaeological sites.",
+      "price": 150.0,
+      "duration_days": "2 days, 1 night",
+      "place": "a9c8fd7f-9aee-4f64-901b-90fd40216f01"
+    }
+  },
+  {
+    "model": "places.tourpackage",
+    "pk": 2,
+    "fields": {
+      "name": "Wadi Rum Desert Camp",
+      "description": "Enjoy the night under the stars with Bedouin hospitality and jeep tours in Wadi Rum.",
+      "price": 100.0,
+      "duration_days": "1 night",
+      "place": "b1cda4fa-7a60-4b56-93dc-c2c1a176e212"
     }
   }
 ]

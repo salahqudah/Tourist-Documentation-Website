@@ -1,67 +1,40 @@
 [
   {
     "model": "places.touristplace",
-    "pk": 1,
+    "pk": "a9c8fd7f-9aee-4f64-901b-90fd40216f01",
     "fields": {
       "name": "Petra",
-      "description": "Ancient city carved into red sandstone cliffs, one of the New Seven Wonders of the World.",
-      "location": "Ma'an Governorate, Jordan",
-      "entry_fee": 50.0,
-      "image": "petra.jpg",
-      "city":"Ma'an",
-      "created_at": "2024-01-01T00:00:00Z"
+      "description": "Petra is an archaeological site famous for its rock-cut architecture.",
+      "city": "Ma'an",
+      "country": "Jordan",
+      "image": "places/petra.png",
+      "opening_hours": "06:00-18:00",
+      "entry_fee": 50,
+      "location": "Ma'an Governorate",
+      "visit_count": 0,
+      "total_rating": 0,
+      "sum_of_ratings": 0,
+      "number_of_ratings": 0,
+      "tags": []
     }
   },
   {
     "model": "places.touristplace",
-    "pk": 2,
+    "pk": "b1cda4fa-7a60-4b56-93dc-c2c1a176e212",
     "fields": {
       "name": "Wadi Rum",
-      "description": "Dramatic desert landscape known as the Valley of the Moon.",
-      "location": "Aqaba Governorate, Jordan",
-      "entry_fee": 10.0,
-      "image": "wadi_rum.jpg",
-      "city":"Aqaba",
-      "created_at": "2024-01-01T00:10:00Z"
-    }
-  },
-  {
-    "model": "places.touristplace",
-    "pk": 3,
-    "fields": {
-      "name": "Dead Sea",
-      "description": "Earth's lowest elevation on land, known for extremely salty water that allows effortless floating.",
-      "location": "Jordan Valley, Jordan",
-      "entry_fee": 25.0,
-      "image": "dead_sea.jpg",
-      "city":"Amman",
-      "created_at": "2024-01-01T00:00:00Z"
-    }
-  },
-  {
-    "model": "places.touristplace",
-    "pk": 4,
-    "fields": {
-      "name": "Jerash Ruins",
-      "description": "One of the best-preserved Roman provincial towns in the world.",
-      "location": "Jerash Governorate, Jordan",
-      "entry_fee": 10.0,
-      "image": "jerash.jpg",
-      "city":"jerash",
-      "created_at": "2024-01-01T00:20:00Z"
-    }
-  },
-  {
-    "model": "places.touristplace",
-    "pk": 5,
-    "fields": {
-      "name": "Ajloun Castle",
-      "description": "12th-century Muslim castle overlooking the Jordan Valley.",
-      "location": "Ajloun Governorate, Jordan",
-      "entry_fee": 5.0,
-      "image": "ajloun_castle.jpg",
-      "city":"Ajloun",
-      "created_at": "2024-01-01T00:00:00Z"
+      "description": "Wadi Rum is known for its stunning desert landscapes.",
+      "city": "Aqaba",
+      "country": "Jordan",
+      "image": "places/wadi_rum.png",
+      "opening_hours": "All day",
+      "entry_fee": 5,
+      "location": "Aqaba Governorate",
+      "visit_count": 0,
+      "total_rating": 0,
+      "sum_of_ratings": 0,
+      "number_of_ratings": 0,
+      "tags": []
     }
   }
 ]
