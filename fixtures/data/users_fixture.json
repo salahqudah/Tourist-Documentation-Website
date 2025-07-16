@@ -5,8 +5,9 @@
     "fields": {
       "username": "testuser",
       "password": "pbkdf2_sha256$260000$example$hashedpasswordexample",
+      "email": "testuser@example.com",
       "is_superuser": false,
-      "is_staff": false,
+      "is_staff": true,
       "is_active": true
     }
   }

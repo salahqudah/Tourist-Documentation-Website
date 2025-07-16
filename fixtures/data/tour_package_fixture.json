@@ -7,7 +7,7 @@
       "description": "A 3-day tour through Petra, Wadi Rum, and the Dead Sea.",
       "price": "180.00",
       "duration_days": 3,
-      "places": [1, 2]
+      "guide": 5
     }
   }
 ]

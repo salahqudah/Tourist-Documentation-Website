@@ -1,0 +1,13 @@
+[
+  {
+    "model": "places.review",
+    "pk": 1,
+    "fields": {
+    "user": 1,
+    "tourist_place": 1,
+    "value": 5,
+    "comment": "Absolutely breathtaking experience!",
+    "created_at": "2025-07-15T12:00:00Z"
+    }
+  }
+]
