@@ -12,5 +12,26 @@
     "fields": {
       "name": "Desert"
     }
+  },
+  {
+    "model": "places.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Beach"
+    }
+  },
+  {
+    "model": "places.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Adventure"
+    }
+  },
+  {
+    "model": "places.tag",
+    "pk": 5,
+    "fields": {
+      "name": "Religious"
+    }
   }
 ]
