@@ -37,7 +37,7 @@ class AddRatingView(APIView):
         place: TouristPlace = serializer.validated_data["place"]
         rating_value = serializer.validated_data["rating"]
 
-        # 1️⃣  Require at least one confirmed booking that matches this place
+     
         has_booking = BookingStatus.objects.filter(
             user=request.user,
             tour_package__place=place,   # adjust if your TourPackage -> Place relation differs
@@ -50,17 +50,17 @@ class AddRatingView(APIView):
                 status=status.HTTP_403_FORBIDDEN
             )
 
-        # 2️⃣  Prevent duplicate reviews
+        
         if Review.objects.filter(place=place, user=request.user).exists():
             return Response(
                 {"detail": "You have already rated this place."},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # 3️⃣  Save the review
+      
         review = serializer.save(user=request.user)
 
-        # 4️⃣  Update aggregate rating on the place
+        
         place.sum_of_ratings += rating_value
         place.number_of_ratings += 1
         place.total_rating = place.sum_of_ratings / place.number_of_ratings
