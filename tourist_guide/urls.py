@@ -16,12 +16,12 @@ schema_view = get_schema_view(
     ),
     public=True,
     permission_classes=[permissions.AllowAny],
-    authentication_classes=[],
+    
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('places.urls')),          # Main app
     path('user/', include('custom_user.urls')),    # User endpoints
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -10,6 +10,7 @@ class TouristPlace(models.Model):
     opening_hours = models.CharField(max_length=255)
     entry_fee = models.FloatField()
     created_at = models.DateTimeField(auto_now_add=True)
+    location = models.CharField(max_length=100, default='Not specified')
 
     # M2M with Tag
     tags = models.ManyToManyField(Tag, related_name='places', blank=True)

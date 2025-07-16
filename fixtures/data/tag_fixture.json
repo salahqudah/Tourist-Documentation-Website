@@ -1,0 +1,16 @@
+[
+  {
+    "model": "places.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Historical"
+    }
+  },
+  {
+    "model": "places.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Desert"
+    }
+  }
+]

@@ -2,10 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from .tourist_place_model import TouristPlace
 from django.core.validators import MaxValueValidator
-
-
 User = get_user_model()
-
 
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
