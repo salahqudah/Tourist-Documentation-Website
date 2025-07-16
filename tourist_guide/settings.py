@@ -165,6 +165,6 @@ SWAGGER_SETTINGS = {
 
 from datetime import timedelta
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=70000),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
