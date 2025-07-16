@@ -6,11 +6,8 @@ from rest_framework.response import Response
 from rest_framework import status, permissions
 
 from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
-
 from ..models import TouristPlace, BookingStatus, Review
 from ..serializers import ReviewSerializer
-
 
 class AddRatingView(APIView):
     """
@@ -21,7 +18,7 @@ class AddRatingView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     @swagger_auto_schema(
-        operation_summary="Add a rating / comment to a tourist place",
+        operation_summary="Add a review to a tourist place",
         request_body=ReviewSerializer,
         responses={
             201: ReviewSerializer,
@@ -34,33 +31,31 @@ class AddRatingView(APIView):
         if not serializer.is_valid():
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        place: TouristPlace = serializer.validated_data["place"]
+        place = serializer.validated_data["place"]
         rating_value = serializer.validated_data["rating"]
 
-     
+        # Ensure user has a confirmed booking for this place
         has_booking = BookingStatus.objects.filter(
             user=request.user,
-            tour_package__place=place,   # adjust if your TourPackage -> Place relation differs
+            tour_package__place=place,
             status="confirmed"
         ).exists()
 
         if not has_booking:
             return Response(
-                {"detail": "You can only rate places you have booked (confirmed booking required)."},
+                {"detail": "Only users with confirmed bookings can review this place."},
                 status=status.HTTP_403_FORBIDDEN
             )
 
-        
+        # Prevent multiple reviews by the same user for the same place
         if Review.objects.filter(place=place, user=request.user).exists():
             return Response(
-                {"detail": "You have already rated this place."},
+                {"detail": "You have already reviewed this place."},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-      
+        # Save review and update place rating stats
         review = serializer.save(user=request.user)
-
-        
         place.sum_of_ratings += rating_value
         place.number_of_ratings += 1
         place.total_rating = place.sum_of_ratings / place.number_of_ratings

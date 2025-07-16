@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "model": "places.placetag",
+    "pk": 1,
+    "fields": {
+      "place": 1,
+      "tag": 1
+    }
+  },
+  {
+    "model": "places.placetag",
+    "pk": 2,
+    "fields": {
+      "place": 1,
+      "tag": 2
+    }
+  },
+  {
+    "model": "places.placetag",
+    "pk": 3,
+    "fields": {
+      "place": 2,
+      "tag": 3
+    }
+  },
+  {
+    "model": "places.placetag",
+    "pk": 4,
+    "fields": {
+      "place": 3,
+      "tag": 2
+    }
+  }
+]

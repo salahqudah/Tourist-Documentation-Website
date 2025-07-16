@@ -1,10 +1,13 @@
 from django.urls import path
 from .views.tourist_place_view import TouristPlaceListCreateView, TouristPlaceDetailView
 from .views.tag_view import TagListView, TagDetailView
-from .views.review_view import AddRatingView
+from .views.add_review_view import AddRatingView
 from .views.tour_package_view import TourPackageListCreateView, TourPackageDetailView
-from .views.booking_view import BookingListCreateView, BookingDetailView
-
+from .views.place_listReview_view import PlaceReviewListView
+from .views.most_places_visited_view import MostVisitedPlacesView
+from .views.booking_add_view import BookingAddView
+from .views.bookinglist_view import BookingListView
+from .views.booking_delete_view import BookingDeleteView
 urlpatterns = [
     # Tourist Places
     path('api/places/', TouristPlaceListCreateView.as_view(), name='place-list'),
@@ -15,14 +18,18 @@ urlpatterns = [
     path('api/tags/<int:pk>/', TagDetailView.as_view(), name='tag-detail'),
 
     # Reviews
-    path('api/reviews/', AddRatingView.as_view(), name='review-list'),
-    path('api/reviews/<int:pk>/', AddRatingView.as_view(), name='review-detail'),
+    path('Reviews/addreviews/', AddRatingView.as_view(), name='add_review'),
+    path('Reviews/places/<uuid:place_id>/allreviews/', PlaceReviewListView.as_view(), name='place_reviews'),
+
+    #most visited
+    path('most visited/places/most-visited/', MostVisitedPlacesView.as_view(), name='most_visited_places'),
 
     # Tour Packages
-    path('api/tour-packages/', TourPackageListCreateView.as_view(), name='tourpackage-list'),
-    path('api/tour-packages/<int:pk>/', TourPackageDetailView.as_view(), name='tourpackage-detail'),
+    path('Tour Packages/tour-packages/', TourPackageListCreateView.as_view(), name='tourpackage-list'),
+    path('Tour Packages/tour-packages/<int:pk>/', TourPackageDetailView.as_view(), name='tourpackage-detail'),
 
     # Bookings
-    path('api/bookings/', BookingListCreateView.as_view(), name='booking-list'),
-    path('api/bookings/<int:pk>/', BookingDetailView.as_view(), name='booking-detail'),
+    path('Bookings/allbookings/', BookingListView.as_view(), name='booking-list'),
+    path('Bookings/bookings/add/', BookingAddView.as_view(), name='booking-add'),
+    path('Bookings/bookings/<uuid:pk>/delete/', BookingDeleteView.as_view(), name='booking-delete'),
 ]
