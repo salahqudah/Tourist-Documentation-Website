@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     'places',
     'custom_user',
-    'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
 ]
 
